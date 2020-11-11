@@ -1,0 +1,97 @@
+#+Title: Emacs Prelude Supercollider
+
+
+* Install emacs on mac
+
+brew install emacs
+
+
+* Install prelude
+
+curl -L https://git.io/epre | sh
+
+
+* Install Supercollider
+
+https://supercollider.github.io/download
+
+Create the Extensions folder on the  "~/Libray/Application
+Support/SuperCollider/" directory
+
+** Clone scel
+
+Go to Extensions folder in SuperCollider and clone the scel repository
+
+git clone https://github.com/supercollider/scel.git
+
+
+** Emacs prelude configuration for SuperCollider
+
+Go to .emacs.d and inside init.el put the below code at the end before the
+"init.el ends here"
+
+#+BEGIN_SRC emacs-lisp
+
+;;================== SCLANG-MODE ===================
+(add-to-list 'load-path "~/.emacs.d/personal/packages/el")
+;;(add-to-list 'load-path "/usr/local/bin/sclang")
+(require 'sclang)
+
+
+
+;;-- open .scd files with sclang mode and auto complete
+(setq auto-mode-alist (cons '("\\.scd$" . sclang-mode) auto-mode-alist))
+;;(add-to-list 'load-path "~/.emacs.d/personal/packages/el")
+;;(require 'sclang)
+;;(setq auto-mode-alist (cons '("\\.scd$" . sclang-mode) auto-mode-alist))
+(add-hook 'sclang-library-startup-hook
+          (lambda () (and sclang-show-workspace-on-startup
+          (not (eq major-mode 'sclang-mode))
+          (sclang-switch-to-workspace))))
+
+(split-window-right)
+#+END_SRC
+
+Go now to personal folder and create an init.el file and put the below
+code inside:
+
+#+BEGIN_SRC emacs-lisp
+;;; package --- Load configuration files.
+
+;;; Commentary:
+
+;;; Code:
+
+;;; Add load paths for all packages in personal/packages.
+(mapc (lambda (path)
+        (add-to-list 'load-path (concat path "/")))
+      (file-expand-wildcards "~/.emacs.d/personal/packages/*"))
+
+;;; Load all customization files in alphabetical order.
+(mapcar (lambda (path)
+          (load-file path))
+        (file-expand-wildcards "~/.emacs.d/personal/postload/*.el"))
+
+
+(provide 'init.el)
+;;; init.el ends here
+
+
+#+END_SRC
+
+Go to .emacs.d/ and inside personal create a folder 'packages'
+
+Inside packages create a folder 'sclang' and paste the files of 'el'
+folder of scel folder you cloned.
+
+Then create a folder 'postload' and put the below .el files
+
+001_packages.el and 
+002_SuperCollider.el
+
+On 002_SuperCollider.el you need to put your sclang path.
+
+Find the path of sclang inside SuperCollider.app  to replace it with
+your path.
+
+Run emacs and enjoy.
