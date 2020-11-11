@@ -44,16 +44,14 @@ Go to .emacs.d and inside init.el put the below code at the end before the
 
 ;;================== SCLANG-MODE ===================
 (add-to-list 'load-path "~/.emacs.d/personal/packages/el")
-;;(add-to-list 'load-path "/usr/local/bin/sclang")
+
 (require 'sclang)
 
 
 
 ;;-- open .scd files with sclang mode and auto complete
 (setq auto-mode-alist (cons '("\\.scd$" . sclang-mode) auto-mode-alist))
-;;(add-to-list 'load-path "~/.emacs.d/personal/packages/el")
-;;(require 'sclang)
-;;(setq auto-mode-alist (cons '("\\.scd$" . sclang-mode) auto-mode-alist))
+
 (add-hook 'sclang-library-startup-hook
           (lambda () (and sclang-show-workspace-on-startup
           (not (eq major-mode 'sclang-mode))
@@ -67,10 +65,6 @@ code inside:
 
 #+BEGIN_SRC emacs-lisp
 ;;; package --- Load configuration files.
-
-;;; Commentary:
-
-;;; Code:
 
 ;;; Add load paths for all packages in personal/packages.
 (mapc (lambda (path)
@@ -88,6 +82,8 @@ code inside:
 
 
 #+END_SRC
+
+** Create packages and postload folders
 
 Go to .emacs.d/ and inside personal create a folder 'packages'
 
