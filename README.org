@@ -23,8 +23,8 @@ curl -L https://git.io/epre | sh
 
 https://supercollider.github.io/download
 
-Create the Extensions folder on the  "~/Libray/Application
-Support/SuperCollider/" directory
+Install superCollider and then go and create the 'Extensions' folder on the  "~/Libray/Application
+Support/SuperCollider/" directory.
 
 ** Clone scel
 
