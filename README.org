@@ -3,12 +3,20 @@
 
 * Install emacs on mac
 
+Open terminal app and run the below commands:
+
+#+BEGIN_SRC shell
 brew install emacs
+#+END_SRC
+
 
 
 * Install prelude
 
+#+BEGIN_SRC shell
 curl -L https://git.io/epre | sh
+#+END_SRC
+
 
 
 * Install Supercollider
@@ -22,7 +30,9 @@ Support/SuperCollider/" directory
 
 Go to Extensions folder in SuperCollider and clone the scel repository
 
+#+BEGIN_SRC shell
 git clone https://github.com/supercollider/scel.git
+#+END_SRC
 
 
 ** Emacs prelude configuration for SuperCollider
