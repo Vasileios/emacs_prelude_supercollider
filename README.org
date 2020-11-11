@@ -90,7 +90,7 @@ Go to .emacs.d/ and inside personal create a folder 'packages'
 Inside packages create a folder 'sclang' and paste the files of 'el'
 folder of scel folder you cloned.
 
-Then create a folder 'postload' and put the below .el files:
+Then create a folder 'postload' and put the below .el files inside:
 
 =001_packages.el= and 
 
