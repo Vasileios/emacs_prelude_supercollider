@@ -103,7 +103,7 @@ Then create a folder 'postload' and put the below .el files
 
 =002_SuperCollider.el=
 
-More info about emacs-prelude and supercollider cofiguration can be found at
+More info about emacs-prelude and supercollider configuration can be found at
 this link: https://github.com/iani/emacs-preludeinside:
 
 In =002_SuperCollider.el= file you need to put your sclang path.
