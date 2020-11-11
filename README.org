@@ -96,7 +96,7 @@ Then create a folder 'postload' and put the below .el files:
 
 =002_SuperCollider.el=
 
-On =002_SuperCollider.el= you need to put your sclang path.
+In =002_SuperCollider.el= file you need to put your sclang path.
 
 Find the path of sclang inside SuperCollider.app to replace it with
 your path.
