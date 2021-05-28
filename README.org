@@ -112,5 +112,3 @@ Find the path of sclang inside SuperCollider.app to replace it with
 your path.
 
 Run emacs and enjoy.
-
-Hello world this is emacs org-mode and Supercollider
